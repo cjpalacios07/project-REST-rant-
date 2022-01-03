@@ -1,10 +1,11 @@
 {
   "name": "rest-rant",
   "version": "1.0.0",
-  "description": "",
+  "description": "REST-Rant is an app where users can review restaurants.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon Server.js"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,13 @@
     "express-react-views": "^0.11.0",
     "nodemon": "^2.0.15",
     "react": "^16.14.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjpalacios07/project-REST-rant-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cjpalacios07/project-REST-rant-/issues"
+  },
+  "homepage": "https://github.com/cjpalacios07/project-REST-rant-#readme"
 }
