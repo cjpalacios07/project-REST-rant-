@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-    res.render('error404')
+    res.status(404).render('Error404')
 })
 
 // Listen for Connections
