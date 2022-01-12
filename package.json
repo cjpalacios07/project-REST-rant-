@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon Server.js"
+    "start": "nodemon Server.js",
+    "dev": "nodemon Server.js, -e js,mjs,json,jsx"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +16,8 @@
     "express": "^4.17.2",
     "express-react-views": "^0.11.0",
     "method-override": "^3.0.0",
-    "mongoose": "^6.1.5",
+    "mongoose": "^6.1.6",
+    "node": "^17.3.0",
     "nodemon": "^2.0.15",
     "react": "^16.14.0"
   },
