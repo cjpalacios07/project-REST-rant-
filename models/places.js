@@ -1,5 +1,5 @@
+
 const mongoose = require('mongoose')
-const {Schema} = mongoose
 
 const placeSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -11,3 +11,4 @@ const placeSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('Place', placeSchema)
+
