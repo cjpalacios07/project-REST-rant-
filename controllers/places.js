@@ -1,26 +1,14 @@
-<<<<<<< HEAD
-const router = require('express').Router();
-const db = require('../models')
-
-router.get('/', (req, res) => {
-    db.Place.find()
-    .then((places) => {
-      res.render('places/index', { places })
-    })
-    .catch(err => {
-      console.log(err) 
-=======
+require('dotenv').config();
 const router = require('express').Router()
 const db = require('../models')
 
 router.get('/', (req, res) => {
   db.Place.find()
   .then((places) => {
-      res.redirect('places/index', { places })
+      res.render('places/index', { places })
   })
   .catch(err => {
       console.log(err)
->>>>>>> a4058469a450cd0028c0d8ff97faff975a3fda9f
       res.render('error404')
   })
 })
@@ -28,7 +16,6 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   db.Place.create(req.body)
   .then(() => {
-    
       res.redirect('/places')
   })
   .catch(err => {
@@ -42,16 +29,6 @@ router.get('/new', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-<<<<<<< HEAD
-  db.Place.findById(req.params.id)
-  .then(place => {
-      res.render('places/show', { place })
-  })
-  .catch(err => {
-      console.log('err', err)
-      res.render('error404')
-  })
-=======
     db.Place.findById(req.params.id)
     .then(place => {
         res.render('places/show', { places })
@@ -60,7 +37,6 @@ router.get('/:id', (req, res) => {
         console.log('err', err)
         res.render('error404')
     })
->>>>>>> a4058469a450cd0028c0d8ff97faff975a3fda9f
 })
 
 router.put('/:id', (req, res) => {
