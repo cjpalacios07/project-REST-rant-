@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const router = require('express').Router();
 const db = require('../models')
 
@@ -8,8 +9,20 @@ router.get('/', (req, res) => {
     })
     .catch(err => {
       console.log(err) 
+=======
+const router = require('express').Router()
+const db = require('../models')
+
+router.get('/', (req, res) => {
+  db.Place.find()
+  .then((places) => {
+      res.redirect('places/index', { places })
+  })
+  .catch(err => {
+      console.log(err)
+>>>>>>> a4058469a450cd0028c0d8ff97faff975a3fda9f
       res.render('error404')
-    })
+  })
 })
 
 router.post('/', (req, res) => {
@@ -29,6 +42,7 @@ router.get('/new', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
+<<<<<<< HEAD
   db.Place.findById(req.params.id)
   .then(place => {
       res.render('places/show', { place })
@@ -37,6 +51,16 @@ router.get('/:id', (req, res) => {
       console.log('err', err)
       res.render('error404')
   })
+=======
+    db.Place.findById(req.params.id)
+    .then(place => {
+        res.render('places/show', { places })
+    })
+    .catch(err => {
+        console.log('err', err)
+        res.render('error404')
+    })
+>>>>>>> a4058469a450cd0028c0d8ff97faff975a3fda9f
 })
 
 router.put('/:id', (req, res) => {

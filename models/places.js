@@ -11,4 +11,7 @@ const placeSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('Place', placeSchema)
+<<<<<<< HEAD
 
+=======
+>>>>>>> a4058469a450cd0028c0d8ff97faff975a3fda9f
