@@ -8,20 +8,32 @@ router.get('/', (req, res) => {
       res.render('places/index', { places })
   })
   .catch(err => {
-      console.log(err)
+      
       res.render('error404')
   })
 })
 
 router.post('/', (req, res) => {
-  db.Place.create(req.body)
-  .then(() => {
-      res.redirect('/places')
-  })
-  .catch(err => {
-      console.log('err', err)
-      res.render('error404')
-  })
+  if (!req.body.pic) {
+    req.body.pic = 'http://placekitten.com/400/400'
+  }
+   db.Place.create(req.body)
+    .then(() => {
+        res.redirect('/places')
+    })
+    .catch(err => {
+      if (err && err.name == 'ValidationError') {
+        let message = 'Validation Error: '
+        for (var field in err.errors) {
+            message += `${field} was ${err.errors[field].value}. `
+            message += `${err.errors[field].message}`
+        }
+        res.render('places/new', { message })
+    }
+    else {
+        res.render('error404')
+    }
+    })
 })
 
 router.get('/new', (req, res) => {
@@ -31,10 +43,10 @@ router.get('/new', (req, res) => {
 router.get('/:id', (req, res) => {
     db.Place.findById(req.params.id)
     .then(place => {
-        res.render('places/show', { places })
+        res.render('places/show', { place })
     })
     .catch(err => {
-        console.log('err', err)
+        
         res.render('error404')
     })
 })

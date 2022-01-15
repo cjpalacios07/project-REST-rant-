@@ -5,7 +5,7 @@ function index (data) {
   console.log(data)
   let placesFormatted = data.places.map((place) => {
     return (
-      <div className="col-sm-6">
+      <div key="places" className="col-sm-6">
         <h2>
           <a href={`/places/${place.id}`}>
             {place.name}
@@ -25,7 +25,7 @@ function index (data) {
       <Def>
           <main>
               <h1>PLACES To Rave and Rant About</h1>
-              <div className='row'>
+              <div key="return" className='row'>
                 {placesFormatted}
               </div>
           </main>
