@@ -1,10 +1,30 @@
-h1 {
-    text-align: center;
-    color: cornflowerblue;
-  }
+
 
 #image {
-    width: 200px;
+    width: 300px;
+   
+}
+
+h1 {
+  text-align: center;
+  color: cornflowerblue;
+}
+
+body {
+  background-color: lightblue;
+  text-align: center;
+}
+
+img {
+    width: 250px;
+    
+}
+
+main {
+  margin-right: 50px;
+  margin-left: 50px;
+  border: 1px solid rgb(229, 246, 253);
+  
 }
 
 nav {
@@ -14,12 +34,15 @@ nav {
 
 nav ul {
   list-style-type: none;
-  margin: 0;
+  margin-right: 50px;
+  
 }
 
 nav li {
-  display: inline;
-  margin-right: 25px;
+  display: inline-block;
+  margin-right: 50px;
+  
+
 }
 
 nav a {
@@ -32,14 +55,37 @@ nav a:hover {
   text-decoration: none;
 }
 
-body {
-  background-color: lightblue;
+input {
+  text-align: center;
+  font-style: italic;
+  overflow: visible
+}
+
+.place-rant {
+  border-top: lightgray solid 1px;
+  padding: 20px;
   text-align: center;
 }
 
-main {
-  margin-right: 20px;
-  margin-left: 20px;
-  background-color: white;
+.place-info {
+  padding: 20px;
+  text-align: center;
 }
 
+.form-group {
+  padding: 30px;
+}
+
+.row {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.new-form {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+input[type=checkbox] {
+padding: 15px;
+}

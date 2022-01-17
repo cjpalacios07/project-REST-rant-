@@ -11,13 +11,13 @@ function Def (html) {
             <body>
             <nav>
                 <ul>
-                    <li>
+                    <li key="unique1">
                         <a href="/">Home</a>
                     </li>
-                    <li>
+                    <li key="unique2">
                         <a href="/places">Places</a>
                     </li>
-                    <li>
+                    <li  key="unique3">
                         <a href="/places/new">Add Place</a>
                     </li>
                 </ul>
