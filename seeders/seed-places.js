@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8fe84074a363ab07fd7318383552aef2ed336f2d
 const db = require('../models')
 
 db.Place.create([{

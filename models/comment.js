@@ -7,5 +7,9 @@ let commentSchema = new mongoose.Schema({
     content: { type: String, default: '' }
 })
 
+<<<<<<< HEAD
 module.exports = mongoose.model('Comment', commentSchema)
 
+=======
+module.exports = mongoose.model('Comment', commentSchema)
+>>>>>>> 8fe84074a363ab07fd7318383552aef2ed336f2d

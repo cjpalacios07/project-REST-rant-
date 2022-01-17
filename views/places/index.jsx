@@ -33,4 +33,8 @@ function index (data) {
     )
   }
 
+<<<<<<< HEAD
 module.exports = index
+=======
+module.exports = index
+>>>>>>> 8fe84074a363ab07fd7318383552aef2ed336f2d
