@@ -30,6 +30,7 @@ main {
 nav {
   background-color: cornflowerblue;
   padding: 10px;
+  text-align: center;
 }
 
 nav ul {
@@ -88,4 +89,13 @@ input {
 
 input[type=checkbox] {
 padding: 15px;
+}
+
+#index {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  flex-direction: row;
+  text-align: center;
+  
 }

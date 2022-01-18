@@ -3,9 +3,30 @@ const Default = require('../Default');
 
 function Show({place}) {
     let comments = (
-        <h3 className="inactive">No comments yet!</h3>
+        <h3 className="inactive">
+          No comments yet!
+        </h3>
     )
-
+    
+  let rating = (
+    <h3 className="inactive">
+      Not yet rated
+    </h3>
+  )
+  if (place.comments.length) {
+    let sumRatings = place.comments.reduce((tot, c) => {
+      return tot + c.stars
+    }, 0)
+    let averageRating = Math.round(sumRatings / place.comments.length)
+    let stars = ''
+    for (let i = 0; i < averageRating; i++) {
+      stars += '⭐️'
+    }
+    rating = (
+      <h3>
+        {stars} stars
+      </h3>
+    )
     if (place.comments.length) {
         comments = place.comments.map(comment => {
             return (
@@ -18,24 +39,27 @@ function Show({place}) {
             )
         })
     }
-
+  }
     return (
         <Default>
             <main>
                 <div className="row place-info">
-                    <div className="col-sm-6">
+                    <div className="col-sm-6 ">
                         <img id="image" src={place.pic} className="img-fluid" alt={place.name}></img>
                         <h3 className="text-left">Located in {place.city}, {place.state}</h3>
                     </div>
                     <div className="col-sm-6">
                         <h1>{place.name}</h1>
                         <h2>Rating</h2>
-                        <p>Not Rated</p>
+                          {rating}
+                        
                         <h2>Description</h2>
                         <h3>{place.showEstablished()}</h3>
                         <h4>Serving {place.cuisines}</h4>
                         <span>
-                            <a href={`/places/${place.id}/edit`} className="btn btn-warning">Edit</a>  
+                            <a href={`/places/${place.id}/edit`} 
+                            className="btn btn-warning"> Edit
+                            </a>  
                             
                             <form method="POST" action={`/places/${place.id}?_method=DELETE`}> 
                                 <button type="submit" className="btn btn-danger">Delete</button>
@@ -64,7 +88,7 @@ function Show({place}) {
                         
                         <div className="form-group col-sm-5">
                             <label className="form-label" htmlFor="stars">Star Rating</label>
-                            <input className="form-range" type="range" id="stars" name="stars" step="0.5" min="1" max="5"/>
+                            <input className="form-control" type="range" id="stars" name="stars" step="0.5" min="1" max="5"/>
                         </div>
                         
                         <div className="form-group col-sm-3">
@@ -72,8 +96,6 @@ function Show({place}) {
                             <label htmlFor="rant">Rant</label><br/>
                             <input type="radio" id="rave" name="rave" value="true"/>
                             <label htmlFor="rave"> Rave </label><br/>
-                            
-                          
                         </div>
                     </div>
                     <div className="row">
